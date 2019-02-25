@@ -1,0 +1,36 @@
+package login;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
+
+
+public class LoginApp extends Application {
+
+    @Override
+    public void start(Stage stage) throws Exception {
+
+        Button button = new Button();
+        button.setOnAction(actionEvent -> {
+            new Alert(Alert.AlertType.INFORMATION)
+            .showAndWait();
+        });
+
+        Parent root = (Parent) FXMLLoader.load(getClass().getResource("login.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("School Management System");
+        stage.show();
+
+    }
+
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
